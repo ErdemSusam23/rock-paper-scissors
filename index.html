@@ -7,6 +7,36 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+        let choice;
+
+        function getComputerChoice()
+        { 
+            let dice;
+            dice = Math.floor((Math.random(1) *3)+1);
+            if(dice == 1)
+            {
+                choice = "Rock";
+            }
+            else if(dice == 2)
+            {
+                choice = "Paper";
+            }
+            else if(dice == 3)
+            {
+                choice = "Scissors";
+            }
+            return choice;
+        }
+
+        function playRound()
+        {
+            
+        }
+        getComputerChoice();
+
+        
+    </script>
     <div class="container">
         <button>Rock</button>
         <button>Paper</button>
