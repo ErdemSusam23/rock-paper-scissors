@@ -8,32 +8,39 @@
 </head>
 <body>
     <script>
-        let choice;
-
+        
         function getComputerChoice()
         { 
+            let computerSelection;
             let dice;
-            dice = Math.floor((Math.random(1) *3)+1);
-            if(dice == 1)
-            {
-                choice = "Rock";
-            }
-            else if(dice == 2)
-            {
-                choice = "Paper";
-            }
-            else if(dice == 3)
-            {
-                choice = "Scissors";
-            }
-            return choice;
+            dice = Math.floor((Math.random(1) * 3)+1);
+
+            if(dice == 1) {computerSelection = "Rock";}
+            
+            else if(dice == 2) {computerSelection = "Paper";}
+    
+            else if(dice == 3) {computerSelection = "Scissors";}
+            
+            return computerSelection;
         }
 
-        function playRound()
+        function getPlayerChoice()
         {
-            
+            let playerSelection;
+            return playerSelection;
         }
-        getComputerChoice();
+
+        function playRound(player,computer)
+        {
+
+            switch(computer)
+            {
+                case "Rock":
+                    if(player == "Rock");
+            }
+        }
+        
+        console.log(getComputerChoice());
 
         
     </script>
