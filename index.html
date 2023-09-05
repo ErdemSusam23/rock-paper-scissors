@@ -27,6 +27,7 @@
         function getPlayerChoice()
         {
             let playerSelection;
+            playerSelection = "Rock";
             return playerSelection;
         }
 
@@ -36,11 +37,26 @@
             switch(computer)
             {
                 case "Rock":
-                    if(player == "Rock");
+                    if(player == "Rock"){ console.log("Draw")}
+                    else if (player == "Paper") { console.log("Players Wins")}
+                    else if (player == "Scissors") { console.log("Computer Wins")}
+                    break
+
+                case "Paper":
+                    if(player == "Rock"){ console.log("Computer Wins")}
+                    else if (player == "Paper") { console.log("Draw")}
+                    else if (player == "Scissors") { console.log("Players Wins")}
+                    break
+                
+                case "Scissors":
+                    if(player == "Rock"){ console.log("Players Wins")}
+                    else if (player == "Paper") { console.log("Computer Wins")}
+                    else if (player == "Scissors") { console.log("Draw")}
+                    break
             }
         }
         
-        console.log(getComputerChoice());
+        playRound(getPlayerChoice(),getComputerChoice());
 
         
     </script>
