@@ -8,7 +8,10 @@
 </head>
 <body>
     <script>
-        
+        let playerScore = 0;
+        let computerScore = 0;
+
+
         function getComputerChoice()
         { 
             let computerSelection;
@@ -38,27 +41,35 @@
             {
                 case "Rock":
                     if(player == "Rock"){ console.log("Draw")}
-                    else if (player == "Paper") { console.log("Players Wins")}
-                    else if (player == "Scissors") { console.log("Computer Wins")}
+                    else if (player == "Paper") { console.log("Players Wins"); playerScore++}
+                    else if (player == "Scissors") { console.log("Computer Wins"); computerScore++}
                     break
 
                 case "Paper":
-                    if(player == "Rock"){ console.log("Computer Wins")}
+                    if(player == "Rock"){ console.log("Computer Wins"); computerScore++}
                     else if (player == "Paper") { console.log("Draw")}
-                    else if (player == "Scissors") { console.log("Players Wins")}
+                    else if (player == "Scissors") { console.log("Players Wins"); playerScore++}
                     break
                 
                 case "Scissors":
-                    if(player == "Rock"){ console.log("Players Wins")}
-                    else if (player == "Paper") { console.log("Computer Wins")}
+                    if(player == "Rock"){ console.log("Players Wins"); playerScore++}
+                    else if (player == "Paper") { console.log("Computer Wins"); computerScore++}
                     else if (player == "Scissors") { console.log("Draw")}
                     break
             }
         }
-        
-        playRound(getPlayerChoice(),getComputerChoice());
 
-        
+        function game()
+        {
+            while (playerScore < 5 && computerScore < 5) 
+            { 
+                playRound(getPlayerChoice(),getComputerChoice()); 
+                console.log("Player: " + playerScore, "Computer: " + computerScore);
+            }
+        }
+
+        game();
+
     </script>
     <div class="container">
         <button>Rock</button>
