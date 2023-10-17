@@ -1,8 +1,9 @@
 let playerScore = 0;
 let computerScore = 0;
+let playerSelection;
+let computerSelection;
 
 function getComputerChoice() {
-	let computerSelection;
 	let dice;
 	dice = Math.floor(Math.random(1) * 3 + 1);
 
@@ -19,7 +20,6 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-	let playerSelection = prompt('Rock, Paper or Scissors');
 	return playerSelection;
 }
 
@@ -64,9 +64,10 @@ function playRound(player, computer) {
 }
 
 function game() {
-	while (playerScore < 5 && computerScore < 5) {
+	while (playerScore < 5 && computerScore < 5 && playerSelection != null) {
 		playRound(getPlayerChoice(), getComputerChoice());
-		console.log('Player: ' + playerScore, 'Computer: ' + computerScore);
+		playerSelection = null;
+		alert('Player: ' + playerScore, 'Computer: ' + computerScore);
 	}
 }
 
@@ -74,4 +75,14 @@ const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('scissors');
 
-//game();
+rock.addEventListener('click', function () {
+	playerSelection = 'Rock';
+});
+paper.addEventListener('click', function () {
+	playerSelection = 'Paper';
+});
+scissors.addEventListener('click', function () {
+	playerSelection = 'Scissors';
+});
+
+game();
