@@ -33,11 +33,11 @@ function playRound(player, computer) {
 				console.log('Draw');
 			} else if (player == 'Paper') {
 				console.log('Players Wins');
-				winner = 'Player';
+				winnerOfTheRound = 'Player';
 				playerScore++;
 			} else if (player == 'Scissors') {
 				console.log('Computer Wins');
-				winner = 'Computer';
+				winnerOfTheRound = 'Computer';
 				computerScore++;
 			}
 			break;
@@ -45,13 +45,13 @@ function playRound(player, computer) {
 		case 'Paper':
 			if (player == 'Rock') {
 				console.log('Computer Wins');
-				winner = 'Computer';
+				winnerOfTheRound = 'Computer';
 				computerScore++;
 			} else if (player == 'Paper') {
 				console.log('Draw');
 			} else if (player == 'Scissors') {
 				console.log('Players Wins');
-				winner = 'Player';
+				winnerOfTheRound = 'Player';
 				playerScore++;
 			}
 			break;
@@ -59,11 +59,11 @@ function playRound(player, computer) {
 		case 'Scissors':
 			if (player == 'Rock') {
 				console.log('Players Wins');
-				winner = 'Player';
+				winnerOfTheRound = 'Player';
 				playerScore++;
 			} else if (player == 'Paper') {
 				console.log('Computer Wins');
-				winner = 'Computer';
+				winnerOfTheRound = 'Computer';
 				computerScore++;
 			} else if (player == 'Scissors') {
 				console.log('Draw');
@@ -77,17 +77,17 @@ function playRound(player, computer) {
 function game() {
 	if (playerScore < 5 && computerScore < 5) {
 		playRound(getPlayerChoice(), getComputerChoice());
-		if (winner === '') {
-			winner = 'Draw';
-			roundWinnerText.textContent = "It's a " + winner;
+		if (winnerOfTheRound === '') {
+			winnerOfTheRound = 'Draw';
+			roundWinnerText.textContent = "It's a " + winnerOfTheRound;
 		} else {
 			gameInfoText.textContent =
 				'Player: ' + playerScore + ' Computer: ' + computerScore;
-			roundWinnerText.textContent = winner + ' Won the round';
+			roundWinnerText.textContent = winnerOfTheRound + ' Won the round';
 		}
 
 		console.log('Player: ' + playerScore + ' Computer: ' + computerScore);
-		winner = '';
+		winnerOfTheRound = '';
 	}
 	if (computerScore == 5 || playerScore == 5) {
 		if (computerScore > playerScore) {
