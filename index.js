@@ -1,7 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 let playerSelection = '';
-let winnerOfTheRound = '';
+let winnerOfTheRound = 'Draw';
 
 function getComputerChoice() {
 	let computerSelection;
@@ -31,6 +31,7 @@ function playRound(player, computer) {
 		case 'Rock':
 			if (player == 'Rock') {
 				console.log('Draw');
+				winnerOfTheRound = 'Draw';
 			} else if (player == 'Paper') {
 				console.log('Players Wins');
 				winnerOfTheRound = 'Player';
@@ -48,6 +49,7 @@ function playRound(player, computer) {
 				winnerOfTheRound = 'Computer';
 				computerScore++;
 			} else if (player == 'Paper') {
+				winnerOfTheRound = 'Draw';
 				console.log('Draw');
 			} else if (player == 'Scissors') {
 				console.log('Players Wins');
@@ -66,6 +68,7 @@ function playRound(player, computer) {
 				winnerOfTheRound = 'Computer';
 				computerScore++;
 			} else if (player == 'Scissors') {
+				winnerOfTheRound = 'Draw';
 				console.log('Draw');
 			}
 			break;
@@ -77,8 +80,7 @@ function playRound(player, computer) {
 function game() {
 	if (playerScore < 5 && computerScore < 5) {
 		playRound(getPlayerChoice(), getComputerChoice());
-		if (winnerOfTheRound === '') {
-			winnerOfTheRound = 'Draw';
+		if (winnerOfTheRound === 'Draw') {
 			roundWinnerText.textContent = "It's a " + winnerOfTheRound;
 		} else {
 			gameInfoText.textContent =
