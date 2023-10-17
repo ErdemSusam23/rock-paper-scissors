@@ -1,7 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 let playerSelection = '';
-let winnerOfTheRound = 'Draw';
+let winnerOfTheRound = '';
 
 function getComputerChoice() {
 	let computerSelection;
